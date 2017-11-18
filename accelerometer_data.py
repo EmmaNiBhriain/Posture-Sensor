@@ -1,4 +1,4 @@
-from pysense import Pysense
+import pysense
 from LIS2HH12 import LIS2HH12
 from time import sleep
 
