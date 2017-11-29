@@ -21,13 +21,18 @@ print("connected to wifi\n")
 client = MQTTClient("Pycom", "io.adafruit.com",user="EmmaNiBhriain", password="e99caf87d89749f28926c88d7170137c", port=1883)
 client.set_callback(sub_cb)
 client.connect()
+client.subscribe(topic="EmmaNiBhriain/feeds/accelerometer-pitch")
 client.subscribe(topic="EmmaNiBhriain/feeds/x-accelerometer")
 
+
 while True:
-    #print(li.roll())
-    roll = str(li.roll())
-    client.publish(topic="EmmaNiBhriain/feeds/x-accelerometer", msg=roll)
+    print("roll:", li.roll())
+    pitch = str(li.pitch())
+    print("pitch:", pitch)
+    client.publish(topic="EmmaNiBhriain/feeds/accelerometer-pitch", msg=pitch)
     time.sleep(3)
     roll = str(li.roll())
     client.publish(topic="EmmaNiBhriain/feeds/x-accelerometer", msg=roll)
     time.sleep(3)
+    if(li.pitch() < 60):
+        print("Danger!!!!!!!")
