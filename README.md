@@ -4,6 +4,11 @@ The project uses a *Pycom* microcontroller and a *Pysense* expansion board to de
 The data is then sent to a dashboard online using WiFi. 
 
 
+  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <img src="pysense3.jpg" width="200" height="200" />   &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;   &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <img src="pysense-tilt.jpg" width="200" height="200" />
+
+
+
+
 ## Components
 * Pycom board
 * Pysense expansion board
