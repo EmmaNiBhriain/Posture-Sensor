@@ -84,3 +84,10 @@ Note how the pitch value must be converted to a string to be sent to the Adafrui
 3. Connect to your network: `wlan.connect("ssid", auth=(WLAN.WPA2, "password"), timeout=5000)`
 4. Wait for connection to be established: `while not wlan.isconnected():  
     machine.idle()`
+    
+## Tutorials
+Relevant tutorials can be found at the links below. These tutorials were created using iorad.com <br>
+[Sign up to Adafruit](https://www.iorad.com/player/96300/IO-Adafruit-sign-up) <br>
+[Create an Adafruit Dashboard](https://www.iorad.com/player/96302/IO-Adafruit-Dashboard) <br>
+[Send and SMS alert](https://www.iorad.com/player/98236/IFTTT-SMS-Tutorial) <br>
+
