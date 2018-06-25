@@ -11,28 +11,28 @@ def sub_cb(topic, msg):
     print(msg)
 
 wlan = WLAN(mode=WLAN.STA)
-wlan.connect("...ssid...", auth=(WLAN.WPA2, "...wifi password..."), timeout=5000)
+wlan.connect("IoT2", auth=(WLAN.WPA2, "ilikecake"), timeout=5000)
 
 print("Connecting to wifi")
 while not wlan.isconnected():
     machine.idle()
 print("connected to wifi\n")
 
-client = MQTTClient("Pycom", "io.adafruit.com",user="...username...", password="...passord...", port=1883)
+client = MQTTClient("Pycom", "io.adafruit.com",user="EmmaNiBhriain", password="e99caf87d89749f28926c88d7170137c", port=1883)
 client.set_callback(sub_cb)
 client.connect()
-client.subscribe(topic=<username> + "/feeds/accelerometer-pitch")
-client.subscribe(topic=<username> + "/feeds/x-accelerometer")
+client.subscribe(topic="EmmaNiBhriain/feeds/accelerometer-pitch")
+client.subscribe(topic="EmmaNiBhriain/feeds/x-accelerometer")
 
 
 while True:
     print("roll:", li.roll())
     pitch = str(li.pitch())
     print("pitch:", pitch)
-    client.publish(topic=<username> + "/feeds/accelerometer-pitch", msg=pitch)
+    client.publish(topic="EmmaNiBhriain/feeds/accelerometer-pitch", msg=pitch)
     time.sleep(3)
     roll = str(li.roll())
-    client.publish(topic=<username> + "/feeds/x-accelerometer", msg=roll)
+    client.publish(topic="EmmaNiBhriain/feeds/x-accelerometer", msg=roll)
     time.sleep(3)
     if(li.pitch() < 60):
         print("Danger!!!!!!!")

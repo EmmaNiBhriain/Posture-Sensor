@@ -25,8 +25,7 @@ def sub_cb(topic, msg):
 
 #Connect to wifi
 wlan = WLAN(mode=WLAN.STA)
-wlan.connect("IoT2", auth=(WLAN.WPA2, "ilikecake"), timeout=5000)
-#wlan.connect("VMCAD4B64", auth=(WLAN.WPA2, "Xdcr7zrm2Jsx"), timeout=5000)
+wlan.connect("...ssid...", auth=(WLAN.WPA2, "...wifi password ... "), timeout=5000)
 
 print("Connecting to wifi")
 while not wlan.isconnected():
@@ -34,16 +33,16 @@ while not wlan.isconnected():
 print("connected to wifi\n")
 
 #set up mqtt client
-client = MQTTClient("Pycom", "io.adafruit.com",user="EmmaNiBhriain", password="e99caf87d89749f28926c88d7170137c", port=1883)
+client = MQTTClient("Pycom", "io.adafruit.com",user="..username...", password="...password here ...", port=1883)
 client.set_callback(sub_cb)
 client.connect()
-client.subscribe(topic="EmmaNiBhriain/feeds/ideal_posture")
+client.subscribe(topic= username + "/feeds/ideal_posture")
 
 
 
 while True:
     pitchString = str(li.pitch())
-    client.publish(topic="EmmaNiBhriain/feeds/accelerometer-pitch", msg=pitchString)
+    client.publish(topic=username + "/feeds/accelerometer-pitch", msg=pitchString)
     print("pitch:", pitchString)
 
 
@@ -59,7 +58,7 @@ while True:
         safe = "Safe"
 
 
-    client.publish(topic="EmmaNiBhriain/feeds/posture-alert", msg=safe)
+    client.publish(topic=username + "/feeds/posture-alert", msg=safe)
     client.check_msg()
 
     time.sleep(3)
