@@ -1,5 +1,5 @@
 {
-  "name": "donationweb-1.0",
+  "name": "posture-sensor-1.0",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -9,7 +9,7 @@
     "body-parser": "~1.13.2",
     "cookie-parser": "~1.3.5",
     "debug": "~2.2.0",
-    "ejs": "~2.5.5",
+    "ejs": "~2.6.9",
     "express": "~4.13.1",
     "morgan": "~1.6.1",
     "serve-favicon": "~2.3.0"
